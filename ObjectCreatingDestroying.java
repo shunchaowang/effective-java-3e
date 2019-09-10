@@ -1,4 +1,11 @@
 /**
+ * Consider static factory methods instead of constructors
+ */
+class StaticFactoryMethod {
+}
+
+
+/**
  * Builder pattern
  */
 class NutritionFacts {
@@ -64,5 +71,26 @@ class NutritionFacts {
     public NutritionFacts build() {
       return new NutritionFacts(this);
     }
+  }
+}
+
+
+/**
+ * Enforce the singleton property with a private method or an enum type. Enum is the best choice for
+ * singleton if there is no inheritant or implementation, Enum is guarantee singleton even with
+ * deserialization.
+ */
+/**
+ * Singleton with public final field. Have to consider thread safe under multi threading
+ * environment.
+ */
+class Elvis {
+  public static final Elvis INSTANCE = new Elvis();
+
+  private Elvis() {
+  }
+
+  public void leaveTheBuilding() {
+    System.out.println(getClass().getName() + " leaves the building.");
   }
 }
