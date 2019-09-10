@@ -18,8 +18,9 @@ class NutritionFacts {
     this.carbohydrate = builder.carbohydrate;
   }
 
+  @Override
   public String toString() {
-    return getClass() + " - servingSize: " + servingSize + ", servings: " + servings
+    return getClass().getName() + " - servingSize: " + servingSize + ", servings: " + servings
         + ", colories: " + colories + ", fat: " + fat + ", carbohydrate: " + carbohydrate;
   }
 
@@ -27,7 +28,7 @@ class NutritionFacts {
     System.out.println("Hello World!");
     NutritionFacts cocaCola =
         new NutritionFacts.Builder(240, 8).calories(100).carbohydrate(27).build();
-    System.out.println(cocaCola.toString());
+    System.out.println(cocaCola);
   }
 
   static class Builder {
